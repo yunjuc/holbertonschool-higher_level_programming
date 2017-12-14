@@ -18,7 +18,7 @@ int is_palindrome(listint_t **head)
 		ptr = ptr->next;
 		count++;
 	}
-	if (count == 1)
+	if (count == 1 || count == 0)
 		return (1);
 	mid = count / 2;
 
