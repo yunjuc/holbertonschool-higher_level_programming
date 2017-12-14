@@ -10,8 +10,10 @@ int is_palindrome(listint_t **head)
 	int i = 0, count = 0, mid;
 	listint_t *temp = *head, *ptr = *head;
 
-	if (head == NULL || *head == NULL)
+	if (head == NULL)
 		return (0);
+	else if (*head == NULL)
+		return (1);
 
 	while (ptr->next != NULL)
 	{
