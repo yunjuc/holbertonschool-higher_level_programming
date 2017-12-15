@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    new = list.copy(matrix)
-    for row in new:
-        for x, y in enumerate(row):
-            row[x] = y * y
+    new = []
+    for row in matrix:
+        new.append([x**2 for x in row])
     return new
