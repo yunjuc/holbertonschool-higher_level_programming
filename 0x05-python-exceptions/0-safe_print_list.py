@@ -9,4 +9,4 @@ def safe_print_list(my_list=[], x=0):
         print()
     except IndexError:
         print('Error: index out of range')
-    return num 
+    return num
