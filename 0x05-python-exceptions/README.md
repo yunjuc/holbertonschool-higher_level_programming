@@ -12,4 +12,6 @@
   
 5-Write a function that raises a type exception  
   
-6-Write a function that raises a name exception with a message   
+6-Write a function that raises a name exception with a message  
+  
+100-Write a function that prints an integer   
