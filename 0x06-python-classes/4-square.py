@@ -8,13 +8,13 @@ class Square:
         '''Initialize Square class.
 
         Args:
-        @size: Size of the square
+        @size: Size of the square.
         '''
         self.__size = size
 
     @property
     def size(self):
-        '''Set size as property
+        '''Set size as property.
 
         Returns:
         Value of size.
@@ -23,10 +23,10 @@ class Square:
 
     @size.setter
     def size(self, value):
-        '''Setter of size
+        '''Setter of size.
 
         Args:
-        @value: value of size
+        @value: value of size.
         '''
         if not isinstance(value, int):
             print("size must be an integer", end="")

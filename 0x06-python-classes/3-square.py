@@ -8,7 +8,7 @@ class Square:
         '''Initialize Square class.
 
         Args:
-            @size: Size of the square
+        @size: Size of the square.
         '''
         if not isinstance(size, int):
             print("size must be an integer", end="")
@@ -23,6 +23,6 @@ class Square:
         '''Caculate the area of a squre.
 
         Returns:
-            Power of square size.
+        Power of square size.
         '''
-        return self.__size**2
+        return self.__size ** 2

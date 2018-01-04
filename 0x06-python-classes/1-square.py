@@ -8,6 +8,6 @@ class Square:
         '''Initialize Square class.
 
         Args:
-            @size: Size of the square
+        @size: Size of the square.
         '''
         self.__size = size
