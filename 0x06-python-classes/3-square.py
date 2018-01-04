@@ -20,7 +20,7 @@ class Square:
             self.__size = size
 
     def area(self):
-        '''Caculate the area of a squre.
+        '''Calculate the area of a squre.
 
         Returns:
         Power of square size.

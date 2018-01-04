@@ -50,7 +50,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        '''Setter of position coordination.
+        '''Setter of position.
 
         Args:
         @value: coordination of position.
@@ -64,7 +64,7 @@ class Square:
             self.__position = value
 
     def area(self):
-        '''Caculate the area of a squre.
+        '''Calculate the area of a squre.
 
         Returns:
         Power of square size.
