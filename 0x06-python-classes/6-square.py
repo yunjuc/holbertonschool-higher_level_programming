@@ -55,11 +55,10 @@ class Square:
         Args:
         @value: coordination of position.
         '''
-        if len(value) != 2 or type(value) is not tuple or \
+        if len(value) != 2 or isinstance(value, int) is False or \
            value[0] < 0 or isinstance(value[0], int) is False or \
            value[1] < 0 or isinstance(value[1], int) is False:
-            print("position must be a tuple of 2 positive integers", end="")
-            raise TypeError
+            raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
 
