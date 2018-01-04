@@ -10,7 +10,7 @@ class Square:
         Args:
         @size: Size of the square.
         '''
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
@@ -43,14 +43,14 @@ class Square:
         Returns:
         Power of square size.
         '''
-        return self.__size ** 2
+        return self.size ** 2
 
     def my_print(self):
         '''Print a square with character #.'''
-        if self.__size == 0:
+        if self.size == 0:
             print()
         else:
-            for row in range(self.__size):
-                for col in range(self.__size):
+            for row in range(self.size):
+                for col in range(self.size):
                     print("#", end="")
                 print()

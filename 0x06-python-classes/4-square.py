@@ -10,7 +10,7 @@ class Square:
         Args:
         @size: Size of the square.
         '''
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
@@ -43,4 +43,4 @@ class Square:
         Returns:
         Power of square size.
         '''
-        return self.__size ** 2
+        return self.size ** 2
