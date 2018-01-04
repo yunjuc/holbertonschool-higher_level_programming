@@ -20,9 +20,9 @@ class Square:
             self.__size = size
 
     def area(self):
-        '''Caculate the area of a squre
+        '''Caculate the area of a squre.
 
         Returns:
-            Power of square size
+            Power of square size.
         '''
         return self.__size**2
