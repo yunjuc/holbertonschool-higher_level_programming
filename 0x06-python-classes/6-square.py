@@ -11,8 +11,8 @@ class Square:
         @size: Size of the square.
         @poistion: Starting point of the square.
         '''
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -55,9 +55,9 @@ class Square:
         Args:
         @value: coordination of position.
         '''
-        if value[0] < 0 or isinstance(value[0], int) is False or \
-           value[1] < 0 or isinstance(value[1], int) is False or \
-           len(value) != 2:
+        if len(value) != 2 or type(value) is not tuple or \
+           value[0] < 0 or isinstance(value[0], int) is False or \
+           value[1] < 0 or isinstance(value[1], int) is False:
             print("position must be a tuple of 2 positive integers", end="")
             raise TypeError
         else:
@@ -69,18 +69,18 @@ class Square:
         Returns:
         Power of square size.
         '''
-        return self.__size ** 2
+        return self.size ** 2
 
     def my_print(self):
         '''Print a square with character #.'''
-        if self.__size == 0:
+        if self.size == 0:
             print()
         else:
-            for y in range(self.__position[1]):
+            for y in range(self.position[1]):
                 print()
-            for row in range(self.__size):
-                for x in range(self.__position[0]):
+            for row in range(self.size):
+                for x in range(self.position[0]):
                     print(" ", end="")
-                for col in range(self.__size):
+                for col in range(self.size):
                     print("#", end="")
                 print()
