@@ -1,0 +1,36 @@
+==============================
+0-add_integer.py testing file
+==============================
+
+** import function from module
+>>> add_integer = __import__('0-add_integer').add_integer
+
+** check: two ints
+>>> add_integer(1, 2)
+3
+
+** check: two floats
+>>> add_integer(1.0, 2.0)
+3
+
+** check: a is string
+>>> add_integer("a", 2)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+** check: b is string
+>>> add_integer(1, "b")
+Traceback (most recent call last):
+  ...
+TypeError: b must be an integer
+
+** check: a list
+>>> add_integer([1], 2)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+** check: return int
+>>> type(add_integer(1.0, 2.0))
+<class 'int'>

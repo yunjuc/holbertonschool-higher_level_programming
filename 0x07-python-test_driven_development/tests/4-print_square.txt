@@ -1,0 +1,37 @@
+================================
+4-print_square.py testing file
+================================
+
+** import function from module
+>>> print_square = __import__('4-print_square').print_square
+
+** check: print a 2*2 square
+>>> print_square(2)
+##
+##
+
+** check: size is 0
+>>> print_square(0)
+
+
+** check: size < 0
+>>> print_square(-1)
+Traceback (most recent call last):
+  ...
+ValueError: size must be >= 0
+
+
+** check: size is not int
+>>> print_square(1.3)
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
+
+** check: size is float and less than 0
+>>> print_square(-1.3)
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
+

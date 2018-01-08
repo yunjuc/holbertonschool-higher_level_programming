@@ -1,0 +1,25 @@
+================================
+3-say_my_name.py testing file
+================================
+
+** import function from module
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+** check: print a name
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+
+** check: no last name
+>>> say_my_name("Bob")
+My name is Bob 
+
+
+** check: last name is not string
+>>> say_my_name("Bob", 12)
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+
