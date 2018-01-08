@@ -22,5 +22,10 @@ class TestMaxInteger(unittest.TestCase):
         result = max_integer([-2, -1, -3])
         self.assertEqual(result, -1)
 
+    def test_str(self):
+        '''Test if list has a string'''
+        with self.assertRaises(TypeError):
+            max_integer([1, 'hello', 2, 3])
+
 if __name__ == "__main__":
     unittest.main()
