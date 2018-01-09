@@ -76,7 +76,7 @@ class Rectangle:
     def print_tymbol(cls, value):
         '''Set print_symbol value'''
         cls.print_symbol = value
- 
+
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         '''Compare two rectangles'''
@@ -92,5 +92,4 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         '''Create a square with Rectangle class'''
-        return Rectangle(size, size) 
-        
+        return Rectangle(size, size)
