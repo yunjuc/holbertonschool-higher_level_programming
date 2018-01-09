@@ -55,3 +55,17 @@ Traceback (most recent call last):
   ...
 TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
 
+
+** check: float overflow
+>>> add_integer(float('inf'), 45)
+Traceback (most recent call last):
+  ...
+OverflowError: cannot convert float infinity to integer
+
+
+** check: NaN error
+>>> add_integer(float('nan'), 2)
+Traceback (most recent call last):
+  ...
+ValueError: cannot convert float NaN to integer
+
