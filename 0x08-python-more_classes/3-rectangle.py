@@ -12,6 +12,8 @@ class Rectangle:
     def __str__(self):
         '''Define rectangle string'''
         string = ""
+        if self.__height == 0 or self.__width == 0:
+            return ""
         for i in range(self.__height):
             for j in range(self.__width):
                 string += '#'
@@ -44,7 +46,7 @@ class Rectangle:
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
