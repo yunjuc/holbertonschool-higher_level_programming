@@ -5,14 +5,16 @@
 
 def text_indentation(text):
     '''text_indentation: print new line after characters ".", ":", and "?"
-
     ** Args **
        @text(str): source string
     '''
     if type(text) is not str:
         raise TypeError("text must be a string")
-    for c in text:
-        if c == '.' or c == '?' or c == ':':
-            print(c, "\n")
+    i = 0
+    while i in range(len(text)):
+        if text[i] == '.' or text[i] == '?' or text[i] == ':':
+            print(text[i], "\n")
+            i += 2
         else:
-            print(c, end="")
+            print(text[i], end="")
+            i += 1
