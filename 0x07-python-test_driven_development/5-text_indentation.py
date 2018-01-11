@@ -13,7 +13,7 @@ def text_indentation(text):
     text = text.strip()
     flag = False
     for c in text:
-        if c == ' ' and flag == True:
+        if c == ' ' and flag is True:
             continue
             flag = False
         if c in ['.', '?', ':']:
@@ -21,5 +21,5 @@ def text_indentation(text):
             print()
             flag = True
         else:
-           print(c, end="")
-           flag = False
+            print(c, end="")
+            flag = False
