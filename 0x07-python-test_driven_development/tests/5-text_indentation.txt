@@ -6,19 +6,52 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
 
-** check: normal print
->>> text = "How are you doing today? I'm doing good, thank you."
->>> text_indentation(text)
-How are you doing today?
-<BLANKLINE>
-I'm doing good, thank you.
+## Check: normal print one word
+>>> text_indentation("Hello.")
+Hello.
 <BLANKLINE>
 
 
-** check: text is not string
->>> text = 23
->>> text_indentation(text)
+## Check: normal print multiple words
+>>> text_indentation("Hello.World")
+Hello.
+<BLANKLINE>
+World
+
+
+## Check: no space between words
+>>> text_indentation("Holberton School")
+Holberton School
+
+
+## Check: no space between words
+>>> text_indentation("Holberton.School.")
+Holberton.
+<BLANKLINE>
+School.
+<BLANKLINE>
+
+
+## Check: multiple checks
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John
+
+
+** check: not a string
+>>> text_indentation(23)
 Traceback (most recent call last):
   ...
 TypeError: text must be a string
 
+
+** check: no argement
+>>> text_indentation()
+Traceback (most recent call last):
+  ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
