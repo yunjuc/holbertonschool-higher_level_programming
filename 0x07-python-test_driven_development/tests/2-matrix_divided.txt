@@ -4,20 +4,62 @@
 
 ** import function from module
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+
+** check: 2 lists in the matrix
 >>> matrix = [[1, 2, 3], [4, 5, 6]]
 >>> matrix_divided(matrix, 3)
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
 
+** check: 3 lists in the matrix
+>>> matrix = [[1, 2, 3], [4, 5, 6], [3, 6, 9]]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0], [1.0, 2.0, 3.0]]
+
+
+** check: 1 list in the matrix
+>>> matrix = [[1, 2, 3]]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0]]
+
+
 ** check: empty matrix
->>> matrix = ""
+>>> matrix = []
 >>> matrix_divided(matrix, 3)
 Traceback (most recent call last):
   ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 
-** check: matrix elment is not list
+** check: no matrix argument is empty
+>>> matrix_divided(, 3)
+Traceback (most recent call last):
+  ...
+SyntaxError: invalid syntax
+
+
+** check: divider argument is empty
+>>> matrix_divided([1, 2, 3])
+Traceback (most recent call last):
+ ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+
+** check: no argument
+>>> matrix_divided()
+Traceback (most recent call last):
+  ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+** check: matrix is not list
+>>> matrix_divided("", 3)
+Traceback (most recent call last):
+  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+** check: elment is not list
 >>> matrix = [[1, 2, 3], "hello"]
 >>> matrix_divided(matrix, 3)
 Traceback (most recent call last):
@@ -25,7 +67,7 @@ Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 
-** check: equal matrix list size
+** check: unequal matrix list size
 >>> matrix = [[1, 2], [4, 5, 6]]
 >>> matrix_divided(matrix, 3)
 Traceback (most recent call last):
@@ -33,18 +75,18 @@ Traceback (most recent call last):
 TypeError: Each row of the matrix must have the same size
 
 
-** check: divide by 0
+** check: divider is 0
 >>> matrix = [[1, 2, 3], [4, 5, 6]]
 >>> matrix_divided(matrix, 0)
 Traceback (most recent call last):
   ...
 ZeroDivisionError: division by zero
 
-** check: divide by string
+
+** check: divider is not int or float
 >>> matrix = [[1, 2, 3], [4, 5, 6]]
 >>> matrix_divided(matrix, "hello")
 Traceback (most recent call last):
   ...
 TypeError: div must be a number
-
 
