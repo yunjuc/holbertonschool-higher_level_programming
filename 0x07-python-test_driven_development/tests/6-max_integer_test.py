@@ -12,17 +12,17 @@ class TestMaxInteger(unittest.TestCase):
         result = max_integer([1, 3, 3, 2])
         self.assertEqual(result, 3)
 
-    def max_first(self):
+    def test_max_first(self):
         '''Test a normal list'''
         result = max_integer([8, 3, 3, 2])
         self.assertEqual(result, 8)
 
-    def max_end(self):
+    def test_max_end(self):
         '''Test a normal list'''
         result = max_integer([1, 3, 3, 10])
         self.assertEqual(result, 10)
 
-    def one_element(self):
+    def test_one_element(self):
         '''Test a normal list'''
         result = max_integer([5])
         self.assertEqual(result, 5)
@@ -45,8 +45,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_float(self):
         '''Test if list has float'''
         with self.assertRaises(TypeError):
-           max_integer([1, 2, -3, 5.5])
-
+            max_integer([1, 2, -3, 5.5])
 
 if __name__ == "__main__":
     unittest.main()
