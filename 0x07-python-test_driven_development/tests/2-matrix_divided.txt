@@ -67,6 +67,14 @@ Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 
+** check: list elment is not list
+>>> matrix = [[1, 2, 'a'], [4, 5, 6]]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
 ** check: unequal matrix list size
 >>> matrix = [[1, 2], [4, 5, 6]]
 >>> matrix_divided(matrix, 3)
@@ -90,3 +98,8 @@ Traceback (most recent call last):
   ...
 TypeError: div must be a number
 
+
+** check: divided by float(inf)
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, float('inf'))
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
