@@ -44,8 +44,8 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_float(self):
         '''Test if list has float'''
-        with self.assertRaises(TypeError):
-            max_integer([1, 2, -3, 5.5])
+        result = max_integer([1, 2, 3.5, 5])
+        self.assertEqual(result, 5)
 
 if __name__ == "__main__":
     unittest.main()
