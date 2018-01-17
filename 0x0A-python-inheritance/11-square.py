@@ -28,8 +28,7 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         '''Rectangle definition'''
-        return "[{}] {}/{}".format(type(self).__name__, self.__width,
-               self.__height)
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
     def area(self):
         '''define rectangle area'''
@@ -42,12 +41,11 @@ class Square(Rectangle):
     def __init__(self, size):
         '''Square instantiation'''
         self.__size = size
-        Square.integer_validator(self, "size", size)
+        super().__init__(size, size)
 
     def __str__(self):
         '''Square definition'''
-        return "[{}] {}/{}".format(type(self).__name__, self.__size,
-               self.__size)
+        return "[Square] {}/{}".format(self.__size, self.__size)
 
     def area(self):
         '''define Square area'''
