@@ -1,0 +1,46 @@
+================================
+7-base_geometry.py testing file
+================================
+
+** import function from module
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+** check name and value is int
+>>> bg.integer_validator("my_int", 12)
+
+** check .area exception
+>>> bg.area()
+Traceback (most recent call last):
+  ...
+Exception: area() is not implemented
+
+** check value is not
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+  ...
+TypeError: name must be an integer
+
+** check ValueErrory, value = 0
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+  ...
+ValueError: age must be greater than 0
+
+** check ValueError, value < 0
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+  ...
+ValueError: distance must be greater than 0
+
+** check missing 1 arugment
+>>> bg.integer_validator(5)
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+** check missing 2 arugments
+>>> bg.integer_validator()
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
