@@ -15,7 +15,7 @@ Traceback (most recent call last):
   ...
 Exception: area() is not implemented
 
-** check value is not
+** check value is string
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
   ...
@@ -44,3 +44,35 @@ TypeError: integer_validator() missing 1 required positional argument: 'value'
 Traceback (most recent call last):
   ...
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+** check value is tuple
+>>> bg.integer_validator("name", (4,))
+Traceback (most recent call last):
+  ...
+TypeError: name must be an integer
+
+** check value is list
+>>> bg.integer_validator("name", [4])
+Traceback (most recent call last):
+  ...
+TypeError: name must be an integer
+
+** check value is boolean
+>>> bg.integer_validator("name", True)
+Traceback (most recent call last):
+  ...
+TypeError: name must be an integer
+
+** check value is set
+>>> bg.integer_validator("name", {1, 2})
+Traceback (most recent call last):
+  ...
+TypeError: name must be an integer
+
+** check value is None
+>>> bg.integer_validator("name", None)
+Traceback (most recent call last):
+  ...
+TypeError: name must be an integer
+
+
