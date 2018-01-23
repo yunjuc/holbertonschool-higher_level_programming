@@ -6,6 +6,7 @@ class Rectangle(Base):
     '''Create a Rectangle class based on Base'''
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        '''Rectangle instantiation'''
         self.width = width
         self.height = height
         self.x = x
