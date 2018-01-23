@@ -90,7 +90,7 @@ class TestSquare(unittest.TestCase):
 
     def test_dict(self):
         '''check square dict attributes'''
-        s1 = Square(10, 2, 1)
+        s1 = Square(10, 2, 1, 1)
         self.assertEqual(s1.to_dictionary(), {'id': 1, 'x': 2, 'size': 10,
                          'y': 1})
         self.assertEqual(type(s1.to_dictionary()), dict)
