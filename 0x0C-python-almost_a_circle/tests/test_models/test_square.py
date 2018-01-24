@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''test_square unittest module'''
 import unittest
 import json
 import sys
