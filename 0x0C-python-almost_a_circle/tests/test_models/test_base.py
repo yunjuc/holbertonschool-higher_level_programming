@@ -59,6 +59,3 @@ class TestBase(unittest.TestCase):
         for i in load:
             self.assertEqual(str(r1), str(i))
             self.assertIsNot(r1, i)
-
-if __name__ == "__main__":
-   unittest.main()

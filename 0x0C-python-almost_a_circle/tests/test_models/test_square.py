@@ -95,6 +95,3 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.to_dictionary(), {'id': 1, 'x': 2, 'size': 10,
                          'y': 1})
         self.assertEqual(type(s1.to_dictionary()), dict)
-
-if __name__ == "__main__":
-   unittest.main()
