@@ -57,9 +57,13 @@ class Base:
     def load_from_file(cls):
         '''create an instance from json file'''
         filename = cls.__name__ + '.json'
-        with open(filename) as f:
-            ob_dict = Base.from_json_string(f.read())
-        ob_list = []
-        for i in ob_dict:
-            ob_list.append(cls.create(**i))
-        return ob_list
+        try:
+            with open(filename) as f:
+                ob_dict = Base.from_json_string(f.read())
+            ob_list = []
+            for i in ob_dict:
+                ob_list.append(cls.create(**i))
+            return ob_list
+        except:
+            return []
+            
