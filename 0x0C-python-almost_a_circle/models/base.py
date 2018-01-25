@@ -48,7 +48,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         '''create an instance from a list of dictionary'''
-        temp = cls(1, 1)
+        temp = cls(1, 1, 0, 0)
         temp.update(**dictionary)
         return temp
 #        return cls(temp.id, temp.width, temp.height, temp.x, temp.y)
