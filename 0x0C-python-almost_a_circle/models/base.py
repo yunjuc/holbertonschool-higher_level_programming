@@ -38,7 +38,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        '''convert lis tof json string to dictionary'''
+        '''convert list of json string to dictionary'''
         ob_dict = []
         if json_string is None or len(json_string) == 0:
             return []
@@ -58,7 +58,7 @@ class Base:
         '''create an instance from json file'''
         filename = cls.__name__ + '.json'
         with open(filename) as f:
-            ob_dict = json.load(f)
+            ob_dict = Base.from_json_string(f.read())
         ob_list = []
         for i in ob_dict:
             ob_list.append(cls.create(**i))
