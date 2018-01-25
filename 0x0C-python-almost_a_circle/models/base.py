@@ -34,7 +34,7 @@ class Base:
             for i in list_objs:
                 ob_list.append(i.to_dictionary())
         with open(filename, 'w') as f:
-            return json.dump(ob_list, f)
+            f.write(Base.to_json_string(ob_list))
 
     @staticmethod
     def from_json_string(json_string):
