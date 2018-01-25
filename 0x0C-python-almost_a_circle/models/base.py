@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 '''class Base module'''
 import json
-
-
+ 
 class Base:
     '''Define Base class'''
     __nb_objects = 0
@@ -48,10 +47,14 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         '''create an instance from a list of dictionary'''
-        temp = cls(1, 1, 0, 0)
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if cls.__name__ is 'Square':
+            temp = cls(1)
+        if cls.__name__ is 'Rectangle':
+            temp = cls(1, 1)
         temp.update(**dictionary)
         return temp
-#        return cls(temp.id, temp.width, temp.height, temp.x, temp.y)
 
     @classmethod
     def load_from_file(cls):
