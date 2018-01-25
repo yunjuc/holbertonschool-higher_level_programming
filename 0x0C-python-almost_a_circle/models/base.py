@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 '''class Base module'''
 import json
- 
+
+
 class Base:
     '''Define Base class'''
     __nb_objects = 0
