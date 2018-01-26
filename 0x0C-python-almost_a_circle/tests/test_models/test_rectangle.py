@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 '''test_rectangle unittest module'''
 import unittest
-import json
 import sys
 import os
 from models.rectangle import Rectangle
@@ -44,13 +43,13 @@ class TestRectangle(unittest.TestCase):
     def test_height_float(self):
         '''check height is float'''
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            r1 = Rectangle(1, 1.5) 
+            r1 = Rectangle(1, 1.5)
 
     def test_height_list(self):
         '''check height is list'''
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r1 = Rectangle(1, [1])
- 
+
     def test_x_string(self):
         '''check x is string'''
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
@@ -60,12 +59,12 @@ class TestRectangle(unittest.TestCase):
         '''check x is float'''
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r1 = Rectangle(1, 2, 1.5, 4)
- 
+
     def test_x_list(self):
         '''check x is list'''
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r1 = Rectangle(1, 2, [4], 4)
- 
+
     def test_y_string(self):
         '''check y is string'''
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
@@ -75,12 +74,12 @@ class TestRectangle(unittest.TestCase):
         '''check y is float'''
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r1 = Rectangle(1, 2, 4, 4.5)
- 
+
     def test_y_list(self):
         '''check y is list'''
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r1 = Rectangle(1, 2, 3, [4])
- 
+
     def test_width_zero(self):
         '''check width is 0'''
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
@@ -90,7 +89,7 @@ class TestRectangle(unittest.TestCase):
         '''check width is negative'''
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r1 = Rectangle(-1, 2)
- 
+
     def test_height_zero(self):
         '''check height is 0'''
         with self.assertRaisesRegex(ValueError, "height must be > 0"):

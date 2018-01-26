@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 '''test_square unittest module'''
 import unittest
-import json
-import sys
-import os
 from models.square import Square
 from models.base import Base
 from models. rectangle import Rectangle
@@ -30,8 +27,8 @@ class TestSquare(unittest.TestCase):
     def test_square_str(self):
         '''check square __str__'''
         s3 = Square(3, 1, 3, 3)
-        self.assertEqual(str(s3), "[Square] (3) 1/3 - 3") 
- 
+        self.assertEqual(str(s3), "[Square] (3) 1/3 - 3")
+
     def test_no_argument(self):
         '''new instance without arugment'''
         with self.assertRaises(TypeError):
@@ -51,7 +48,7 @@ class TestSquare(unittest.TestCase):
         '''check size is list'''
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             s3 = Square([1])
- 
+
     def test_size_value(self):
         '''check size is 0'''
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
