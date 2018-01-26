@@ -13,72 +13,147 @@ class TestRectangle(unittest.TestCase):
 
     def test_id_assignment(self):
         '''create a new rectangle'''
-        r1 = Rectangle(1, 4, 2, 4, 12)
-        self.assertEqual(r1.id, 12)
+        Base._Base__nb_objects = 0
+        r1 = Rectangle(1, 2)
+        r2 = Rectangle(3, 4)
+        r3 = Rectangle(1, 4, 2, 4, 12)
+        self.assertEqual(r1.id, 1)
+        self.assertEqual(r2.id, 2)
+        self.assertEqual(r3.id, 12)
 
-    def test_width_not_int(self):
-        '''check width type'''
+    def test_width_string(self):
+        '''check width is string'''
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r1 = Rectangle('a', 2)
+
+    def test_width_float(self):
+        '''check width is float'''
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r2 = Rectangle(1.5, 2)
+
+    def test_width_list(self):
+        '''check width is list'''
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             r3 = Rectangle([1], 2)
 
-    def test_height_not_int(self):
-        '''check height type'''
+    def test_height_string(self):
+        '''check height is string'''
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r1 = Rectangle(1, 'a')
-            r2 = Rectangle(2, 1.5)
-            r3 = Rectangle(1, [1])
 
-    def test_x_not_int(self):
-        '''check x type'''
+    def test_height_float(self):
+        '''check height is float'''
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            r1 = Rectangle(1, 1.5) 
+
+    def test_height_list(self):
+        '''check height is list'''
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            r1 = Rectangle(1, [1])
+ 
+    def test_x_string(self):
+        '''check x is string'''
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r1 = Rectangle(1, 2, 'x', 4)
-            r2 = Rectangle(1, 2, 1.5, 4)
-            r3 = Rectangle(1, 2, [4], 4)
 
-    def test_y_not_int(self):
-        '''check y type'''
+    def test_x_float(self):
+        '''check x is float'''
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r1 = Rectangle(1, 2, 1.5, 4)
+ 
+    def test_x_list(self):
+        '''check x is list'''
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r1 = Rectangle(1, 2, [4], 4)
+ 
+    def test_y_string(self):
+        '''check y is string'''
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             r1 = Rectangle(1, 2, 3, '4')
-            r2 = Rectangle(1, 2, 3, 4.5)
-            r3 = Rectangle(1, 2, 3, [4])
 
-    def test_width_value_error(self):
-        '''check width value'''
+    def test_y_float(self):
+        '''check y is float'''
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            r1 = Rectangle(1, 2, 4, 4.5)
+ 
+    def test_y_list(self):
+        '''check y is list'''
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            r1 = Rectangle(1, 2, 3, [4])
+ 
+    def test_width_zero(self):
+        '''check width is 0'''
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r1 = Rectangle(0, 2)
-            r2 = Rectangle(-1, 2)
 
-    def test_height_value_error(self):
-        '''check height value'''
+    def test_width_negative(self):
+        '''check width is negative'''
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            r1 = Rectangle(-1, 2)
+ 
+    def test_height_zero(self):
+        '''check height is 0'''
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r1 = Rectangle(1, 0)
+
+    def test_height_negative(self):
+        '''check height is negative'''
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r2 = Rectangle(1, -2)
 
     def test_x_value_error(self):
-        '''check x value'''
+        '''check x is negative'''
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             r1 = Rectangle(1, 2, -1, 3)
 
     def test_y_value_error(self):
-        '''check y value'''
+        '''check y is negative'''
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             r1 = Rectangle(1, 2, 3, -4)
 
     def test_missing_arugment(self):
-        '''check no argument'''
+        '''check missing 1 argument'''
         with self.assertRaises(TypeError):
             r1 = Rectangle(2)
+
+    def test_no_arugment(self):
+        '''check no argument'''
+        with self.assertRaises(TypeError):
             r2 = Rectangle()
 
     def test_area_result(self):
         '''check area method'''
         self.assertEqual(Rectangle(2, 4).area(), 8)
 
-#    def teset_display(self):
-#        '''check rectangle display'''
-#        r = Rectangle(3, 2)
+    def teset_display_width_height(self):
+        '''check rectangle display'''
+        r = Rectangle(3, 2)
+        display = "###\n###\n"
+        output = io.StringIO()
+        sys.stdout = output
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getValue(), display)
+
+    def teset_display_width_height_x(self):
+        '''check rectangle display'''
+        r = Rectangle(3, 2, 1)
+        display = " ###\n ###\n"
+        output = io.StringIO()
+        sys.stdout = output
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getValue(), display)
+
+    def teset_display_width_height_x_y(self):
+        '''check rectangle display'''
+        r = Rectangle(3, 2, 1, 2)
+        display = "\n\n ###\n ###\n"
+        output = io.StringIO()
+        sys.stdout = output
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getValue(), display)
 
     def test_str(self):
         '''check __str__ output'''

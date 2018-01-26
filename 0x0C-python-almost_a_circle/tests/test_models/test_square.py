@@ -12,46 +12,54 @@ from models. rectangle import Rectangle
 class TestSquare(unittest.TestCase):
     '''Unittest for Square model'''
 
-    def test_new_square(self):
-        '''create square with different arguments'''
+    def test_id_assignment(self):
+        '''check square id'''
+        Base._Base__nb_objects = 0
         s1 = Square(5)
         s2 = Square(2, 2)
-        s3 = Square(3, 1, 3, 3)
+        s3 = Square(3, 1, 3, 22)
+        self.assertEqual(s1.id, 1)
+        self.assertEqual(s2.id, 2)
+        self.assertEqual(s3.id, 22)
+
+    def test_square_area(self):
+        '''check area'''
+        s1 = Square(5)
         self.assertEqual(s1.area(), 25)
-        self.assertEqual(s2.area(), 4)
-        self.assertEqual(s3.area(), 9)
-        self.assertEqual(str(s3), "[Square] (3) 1/3 - 3")
+
+    def test_square_str(self):
+        '''check square __str__'''
+        s3 = Square(3, 1, 3, 3)
+        self.assertEqual(str(s3), "[Square] (3) 1/3 - 3") 
+ 
+    def test_no_argument(self):
+        '''new instance without arugment'''
         with self.assertRaises(TypeError):
             s = Square()
 
-#    def test_display(self):
-#        '''check square display'''
-
-    def test_size_int(self):
-        '''check size type'''
+    def test_size_string(self):
+        '''check size is string'''
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             s1 = Square('a')
-            s2 = Square([3])
-            s3 = Square(1.5)
 
-    def test_x_int(self):
-        '''check x type'''
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            s1 = Square(3, '4')
-            s2 = Square(3, [3])
-            s3 = Square(3, 1.5)
+    def test_size_float(self):
+        '''check size is float'''
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            s2 = Square(1.5)
 
-    def test_y_int(self):
-        '''check y type'''
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            s1 = Square(3, 2, '4')
-            s2 = Square(3, 1, [3])
-            s3 = Square(3, 3, 1.5)
-
+    def test_size_list(self):
+        '''check size is list'''
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            s3 = Square([1])
+ 
     def test_size_value(self):
-        '''check size value'''
+        '''check size is 0'''
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             s1 = Square(0)
+
+    def test_size_value(self):
+        '''check size is negative'''
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             s2 = Square(-3)
 
     def test_x_value(self):
