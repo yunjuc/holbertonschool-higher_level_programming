@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 '''test_square unittest module'''
 import unittest
+import os
+import sys
 from models.square import Square
 from models.base import Base
 from models. rectangle import Rectangle
@@ -9,15 +11,17 @@ from models. rectangle import Rectangle
 class TestSquare(unittest.TestCase):
     '''Unittest for Square model'''
 
-    def test_id_assignment(self):
+    def test_new_square(self):
         '''check square id'''
         Base._Base__nb_objects = 0
         s1 = Square(5)
         s2 = Square(2, 2)
-        s3 = Square(3, 1, 3, 22)
-        self.assertEqual(s1.id, 1)
-        self.assertEqual(s2.id, 2)
-        self.assertEqual(s3.id, 22)
+        s3 = Square(2, 3, 4)
+        s4 = Square(3, 1, 3, 22)
+        self.assertEqual(s1.size, 5)
+        self.assertEqual(s2.x, 2)
+        self.assertEqual(s3.y, 4)
+        self.assertEqual(s4.id, 22)
 
     def test_square_area(self):
         '''check area'''
@@ -49,20 +53,30 @@ class TestSquare(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             s3 = Square([1])
 
-    def test_size_value(self):
+    def test_size_zero(self):
         '''check size is 0'''
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             s1 = Square(0)
 
-    def test_size_value(self):
+    def test_size_negative(self):
         '''check size is negative'''
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             s2 = Square(-3)
+
+    def test_x_type(self):
+        '''check x is string'''
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            s1 = Square(3, 'a')
 
     def test_x_value(self):
         '''check x value'''
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             s1 = Square(3, -3)
+
+    def test_y_type(self):
+        '''check y is string'''
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            s1 = Square(3, 2, '4') 
 
     def test_y_value(self):
         '''check y value'''

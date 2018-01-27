@@ -34,7 +34,7 @@ class TestBase(unittest.TestCase):
 
     def test_save_to_file_rect(self):
         '''check save rectangle to json file'''
-        r1 = Rectangle(10, 7, 2, 8)
+        r1 = Rectangle(10, 7)
         Rectangle.save_to_file([r1])
         with open("Rectangle.json", "r") as file:
                 j_load = json.load(file)
@@ -58,7 +58,7 @@ class TestBase(unittest.TestCase):
 
     def test_save_to_file_square(self):
         '''check save square to json file'''
-        s1 = Square(10, 7, 2)
+        s1 = Square(10)
         Square.save_to_file([s1])
         with open("Square.json", "r") as file:
                 j_load = json.load(file)

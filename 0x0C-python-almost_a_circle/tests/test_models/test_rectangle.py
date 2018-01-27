@@ -2,7 +2,7 @@
 '''test_rectangle unittest module'''
 import unittest
 import sys
-import os
+import io
 from models.rectangle import Rectangle
 from models.base import Base
 
@@ -124,7 +124,7 @@ class TestRectangle(unittest.TestCase):
         '''check area method'''
         self.assertEqual(Rectangle(2, 4).area(), 8)
 
-    def teset_display_width_height(self):
+    def test_display_width_height(self):
         '''check rectangle display'''
         r = Rectangle(3, 2)
         display = "###\n###\n"
@@ -132,9 +132,9 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = output
         r.display()
         sys.stdout = sys.__stdout__
-        self.assertEqual(output.getValue(), display)
+        self.assertEqual(output.getvalue(), display)
 
-    def teset_display_width_height_x(self):
+    def test_display_width_height_x(self):
         '''check rectangle display'''
         r = Rectangle(3, 2, 1)
         display = " ###\n ###\n"
@@ -142,9 +142,9 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = output
         r.display()
         sys.stdout = sys.__stdout__
-        self.assertEqual(output.getValue(), display)
+        self.assertEqual(output.getvalue(), display)
 
-    def teset_display_width_height_x_y(self):
+    def test_display_width_height_x_y(self):
         '''check rectangle display'''
         r = Rectangle(3, 2, 1, 2)
         display = "\n\n ###\n ###\n"
@@ -152,7 +152,7 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = output
         r.display()
         sys.stdout = sys.__stdout__
-        self.assertEqual(output.getValue(), display)
+        self.assertEqual(output.getvalue(), display)
 
     def test_str(self):
         '''check __str__ output'''
