@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 '''test_square unittest module'''
 import unittest
-import os
-import sys
 from models.square import Square
 from models.base import Base
 from models. rectangle import Rectangle
