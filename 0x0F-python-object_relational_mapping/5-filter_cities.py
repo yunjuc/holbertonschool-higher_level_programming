@@ -14,7 +14,7 @@ if __name__ == "__main__":
                  WHERE states.name = %s\
                  ORDER BY cities.id ASC", (sys.argv[4],))
     city = cur.fetchall()
-    result=[]
+    result = []
     for row in city:
         result.append(row[0])
     print(', '.join(result))
