@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 '''City model'''
-import sqlalchemy
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from model_state import Base
