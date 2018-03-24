@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 '''State model'''
-import sqlalchemy
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
