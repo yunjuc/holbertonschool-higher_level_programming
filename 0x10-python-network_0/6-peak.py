@@ -4,7 +4,9 @@
 
 def find_peak(list_of_integers):
     '''Find the peak'''
-    for i in range(1, len(list_of_integers)):
-        if list_of_integers[i] < list_of_integers[i-1]:
-            return (list_of_integers[i-1])
-    return list_of_integers[0]
+    return max(list_of_integers)
+
+#    for i in range(1, len(list_of_integers)):
+#        if list_of_integers[i] < list_of_integers[i-1]:
+#            return (list_of_integers[i-1])
+#    return list_of_integers[0]
