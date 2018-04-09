@@ -1,23 +1,23 @@
-## Python - Network #1  
+## Python - Network 
   
-0-What's my status? #0  
+0-What's my status?   
   
-1-Response header value #0  
+1-Response header value   
   
-2-POST an email #0  
+2-POST an email 
   
-3-Error code #0  
+3-Error code  
   
-4-What's my status? #1  
+4-What's my status?   
   
-5-Response header value #1  
+5-Response header value   
   
-6-POST an email #1   
+6-POST an email 
   
-7-Error code #1  
+7-Error code  
   
 8-Search API   
   
-9-Star Wars API #0  
+9-Star Wars API  
   
 10-My Github!
