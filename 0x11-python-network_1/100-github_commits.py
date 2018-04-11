@@ -11,7 +11,7 @@ if __name__ == "__main__":
     json = r.json()
     result = []
     for obj in json:
-        sha = obj['sha']
+        sha = obj.get('sha')
         name = obj.get('commit').get('author').get('name')
         add = sha + ': ' + name
         result.append(add)
