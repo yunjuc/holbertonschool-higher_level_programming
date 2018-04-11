@@ -12,9 +12,7 @@ if __name__ == "__main__":
     result = []
     for obj in json:
         sha = obj['sha']
-        commit = obj['commit']
-        author = commit['author']
-        name = author['name']
+        name = obj.get('commit').get('author').get('name')
         add = sha + ': ' + name
         result.append(add)
     for i in range(10):
