@@ -16,4 +16,7 @@ if __name__ == "__main__":
         add = sha + ': ' + name
         result.append(add)
     for i in range(10):
-        print(result[i])
+        try:
+            print(result[i])
+        except:
+            pass
