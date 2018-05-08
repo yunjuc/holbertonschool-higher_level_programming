@@ -1,15 +1,9 @@
 #!/usr/bin/node
 
 let fs = require('fs');
-
-fs.open(process.argv[2], 'r', function (err, file) {
+fs.readFile(process.argv[2], 'utf8', function (err, data) {
   if (err) {
-    return console.error(err);
+    return console.log(err);
   }
-  fs.readFile(file, 'utf8', function (err, data) {
-    if (err) {
-      console.log(err);
-    }
-    console.log(data);
-  });
+  console.log(data);
 });
