@@ -9,7 +9,7 @@ request(url, function (error, response, body) {
   const data = JSON.parse(body);
   let count = 0;
   for (let i in data.results) {
-    if (data.results[i].characters.includes(id1)||data.results[i].characters.includes(id2)) count++;
+    if (data.results[i].characters.includes(id1) || data.results[i].characters.includes(id2)) count++;
   }
   console.log(count);
 });
