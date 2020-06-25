@@ -9,7 +9,7 @@ This folder consists of high-level programming projects at Holberton School. The
 * JavaScript and jQuery
 * API and HTTP reqeuests
 
-## Lists of Projects
+## List of Projects
 * [0x00-python-hello_world](https://github.com/yunjuc/holbertonschool-higher_level_programming/tree/master/0x00-python-hello_world)
 * [0x01-python-if_else_loops_functions](https://github.com/yunjuc/holbertonschool-higher_level_programming/tree/master/0x01-python-if_else_loops_functions)
 * [0x02-python-import_modules](https://github.com/yunjuc/holbertonschool-higher_level_programming/tree/master/0x02-python-import_modules)
